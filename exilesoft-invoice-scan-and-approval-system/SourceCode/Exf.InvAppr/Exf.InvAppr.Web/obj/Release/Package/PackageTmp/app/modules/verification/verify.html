@@ -1,0 +1,130 @@
+﻿<form novalidate name="frmValidate" class="form-horizontal">
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <div class="title">Invoice Details</div>
+            </div>
+        </div>
+        <div class="card-body" id="resizable-container">
+            <div id="top-content">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Invoice Id:</label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-disabled="true" class="form-control" ng-model="vm.invoiceDetails.Voucher.Id" />
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label col-sm-2" for="invoiceNo">Invoice No:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" ng-model="vm.invoiceDetails.Voucher.InvoiceNo" name="invoiceNo" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Invoice Date:</label>
+                        <div class="col-sm-5">
+                            <div class="input-group">
+                                <input type="text" readonly class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="vm.invoiceDetails.Voucher.InvoiceDate" is-open="vm.invoiceDateOpened" datepicker-options="vm.invoiceDateOptions" ng-required="true" show-button-bar="false" alt-input-formats="['M!/d!/yyyy']" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default no-mtop" ng-click="vm.invoiceDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Due Date:</label>
+                        <div class="col-sm-5">
+                            <div class="input-group">
+                                <input type="text" readonly class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="vm.invoiceDetails.Voucher.DueDate" is-open="vm.dueDateOpened" datepicker-options="vm.dueDateOptions" ng-required="true" show-button-bar="false" alt-input-formats="['M!/d!/yyyy']" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default no-mtop" ng-click="vm.dueDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label col-sm-2" for="supplier">Supplier:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="supplier" ng-model="vm.invoiceDetails.Voucher.Supplier" uib-typeahead="supplier as supplier.Name for supplier in vm.invoiceDetails.Suppliers | filter:{Name:$viewValue}" class="form-control" 
+                                   typeahead-show-hint="true" typeahead-min-length="0" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label col-sm-2" for="amount">Invoice Amount:</label>
+                        <div class="col-sm-5">
+                            <div class="col-sm-8">
+                                <input style="width: 100%" lang="no" ng-model="vm.invoiceDetails.Voucher.Amount" name="amount" required class="form-control"/>
+                            </div>
+                            <div class="col-sm-4">
+                                <input style="width: 100%" type="text" name="currency" ng-model="vm.invoiceDetails.Voucher.Currency" uib-typeahead="currency as currency.Name for currency in vm.invoiceDetails.CurrencyCodes | filter:{Name:$viewValue}" class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-required="true">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">PO Number:</label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-model="vm.invoiceDetails.Voucher.PONumber" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label col-sm-2"> Approver:</label>
+                        <div class="col-sm-5">
+                            <select ng-model="vm.invoiceDetails.Voucher.Approver" class="form-control" ng-options="approver.DisplayName for approver in vm.invoiceDetails.Approvers track by approver.Id"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Comment:</label>
+                        <div class="col-sm-5">
+                            <textarea rows="4" ng-model="vm.Comment.Text" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Comment History:</label>
+                        <div class="col-sm-5">
+                            <div class="comment-box" ng-repeat="comment in vm.invoiceDetails.Voucher.Comments | orderBy:'-CreatedDateTime' | limitTo:vm.limitedComments.count">
+                                <p>{{comment.Text}}</p>
+                                <span class="date-time">
+                                    {{comment.CreatedBy}}
+                                    at {{comment.CreatedDateTime |date}}
+                                </span>
+                            </div>
+                            <div ng-show="vm.invoiceDetails.Voucher.Comments.length > 1" ng-click="vm.showHideComments()">{{vm.limitedComments.text}} <i ng-class="(vm.limitedComments.count > 1) ? 'fa fa-angle-up':'fa fa-angle-down'" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5">
+                            <input type="button" class="btn btn-default" value="Save" ng-click="vm.updateInvoice(vm.invoiceDetails.Voucher)" />
+                            <input type="button" class="btn btn-default" value="Save and Send to Approve" ng-click="vm.verificationComplete(vm.invoiceDetails.Voucher,
+                   frmValidate.invoiceNo.$valid , frmValidate.supplier.$valid, frmValidate.amount.$valid)" />
+                            <input type="button" class="btn btn-default" value="Request More Info" ng-click="vm.requestMoreInfo()" />
+                            <input type="button" class="btn btn-default" value="Reject" ng-click="vm.reject(vm.invoiceDetails.Voucher)" />
+                            <input type="button" class="btn btn-default" value="Cancel" ng-click="vm.cancel()" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-4" ng-bind-html="vm.message" data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom-content">
+                <invoice-Image url="vm.invoiceDetails.ImageUrl"></invoice-Image>
+            </div>
+            <div id="content-resizer" class="row"
+                 resizer
+                 resizer-height="6"
+                 resizer-top="#top-content"
+                 resizer-bottom="#bottom-content">
+            </div>
+        </div>
+    </div>
+
+</form>
+<style>
+    body {
+        overflow-y: hidden;
+    }
+</style>

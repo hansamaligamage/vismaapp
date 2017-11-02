@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AuthContext-Web.config Connection String" description="AuthContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=eisis.database.windows.net;Initial Catalog=invoicedb;user id=exilesoft;password=eXile@123" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuthContext']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuthContext']/@connectionString" />
+  </parameter>
+  <parameter name="VismaEntities-Web.config Connection String" description="VismaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/context.VismaContext.csdl|res://*/context.VismaContext.ssdl|res://*/context.VismaContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=eisis.database.windows.net;initial catalog=vismadb;persist security info=True;user id=exilesoft;password=eXile@123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VismaEntities']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='VismaEntities']/@connectionString" />
+  </parameter>
+  <parameter name="VismaConnection-Web.config Connection String" description="VismaConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=eisis.database.windows.net;Initial Catalog=vismadb;user id=exilesoft;password=eXile@123" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VismaConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Service\.API\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='VismaConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,9 @@
+﻿{
+  "frameworks": {
+    "net46":{
+      "dependencies": {
+        "System.Collections.Specialized": "4.0.1"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+﻿<script type="text/ng-template" id="commonAccountPopup.html">
+    <div class="modal-header">
+        <h3>{{vm.popupTitle}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="mbottom-10">Search: <input type="text" placeholder="Search Account" ng-model="vm.searchText" /></div>
+
+        <br />
+        <span ng-hide="vm.commonAccounts.length">No Data</span>
+        
+        <table class="table table-hover">
+            <tbody>
+                <tr ng-repeat="account in vm.commonAccounts|filter:vm.searchText" class="clickble-raw" ng-class="{'active':$index == vm.selectedRowIndex}" ng-click="vm.rowSelect($index,account)" data-dismiss="modal">
+                    <td>{{account.No}}</td>
+                    <td>{{account.Name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>

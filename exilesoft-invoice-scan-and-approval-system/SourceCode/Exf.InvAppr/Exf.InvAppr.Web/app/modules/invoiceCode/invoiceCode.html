@@ -1,0 +1,123 @@
+﻿<div ng-if="vm.message!=''" data-ng-class="(vm.isSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="vm.closeAlert($event)">&times;</a>
+    {{vm.message}}
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <div class="title">Invoice Code</div>
+        </div>
+    </div>
+    <div class="card-body">
+<div class="row">
+            <div class="col-md-12">
+    <button class="btn btn-primary" style="float:right" ng-click="vm.saveVoucherAccount(false)">Save</button>
+    <button class="btn btn-primary" style="float:right;margin-right:7px" ng-click="vm.saveVoucherAccount(true)">Save Draft</button>
+    <button class="btn btn-primary" style="float:right;margin-right:7px" ng-click="vm.close()">Close</button>
+</div>
+        </div>
+<div class="row" style="z-index:2;  position:relative">
+            
+   <div class="col-md-12">
+    <a ng-if="!vm.isCompleted" href="#" class="btn btn-info btn-xs" ng-click="vm.addNewAccount($event)">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Invoice No</th>
+                    <th>Text</th>
+                    <th>Debit Account</th>
+                    <th>Debit VAT</th>
+                    <th>Credit Account</th>
+                    <th>Credit VAT</th>
+                    <th>Amount</th>
+                    <th>Voucher Date</th>
+                    <th>Due Date</th>
+                    <th>Value Date</th>
+                    <th>Department</th>
+                    <th>Project</th>
+                    <th>Employee</th>
+                    <th>Cost Allocation</th>
+                    <th>CID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="accEntry in vm.vismaAccEntries">
+                    
+                    <td>
+                        <a ng-if="$index != 0" href="#" class="btn btn-danger btn-xs" ng-click="vm.removeAccountRow($event,$index,accEntry)">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </a>
+                    </td>
+                    <td>{{accEntry.invoiceNo}}</td>
+                    <td><input type="text" ng-model='accEntry.text' required name="field" /></td>
+                    <td><input type="text" ng-model='accEntry.debitAccNo' required name="field" ng-click="vm.openVismaAccModal('debit',$index)" /></td>
+                    <td><input type="text" ng-model='accEntry.debitVat' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getVatAccData,vm.updateDebitVatAccount)" /></td>
+                    <td><input type="text" ng-model='accEntry.creditAccNo' required name="field" ng-click="vm.openVismaAccModal('credit',$index)" /></td>
+                    <td><input type="text" ng-model='accEntry.creditVat' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getVatAccData,vm.updateCreditVatAccount)" /></td>
+                    <td>
+                        <input ng-if="accEntry.currencyData.convertedAmount" type="text" style="text-align:right;" ng-model='accEntry.currencyData.convertedAmount' ng-readonly="vm.isAmountDisabled" required ng-keydown="vm.openCurrencyConvertModal($event,$index)" />
+                        <input ng-if="!accEntry.currencyData.convertedAmount" type="text" style="text-align:right;" ng-model='accEntry.AmountInDefaultCurrency' ng-readonly="vm.isAmountDisabled" required ng-keydown="vm.openCurrencyConvertModal($event,$index)" />
+                        <input ng-if="accEntry.currencyData.convertedAmount" type="text" style="text-align:right;" value="{{accEntry.currencyData.baseAmount}} {{accEntry.Currency1Code}}" ng-readonly="vm.isAmountDisabled" required ng-keydown="vm.openCurrencyConvertModal($event,$index)" />
+                    </td>
+                     <td><input jqdatepicker type="text" datetime="yyyy-MM-dd" ng-model='accEntry.voucherDate' required name="field" /></td>
+                    <td><input jqdatepicker type="text" datetime="yyyy-MM-dd" ng-model='accEntry.dueDate' required name="field" /></td>
+                    <td><input jqdatepicker type="text" datetime="yyyy-MM-dd" ng-model='accEntry.valueDate' required name="field" /></td>                    
+                    <td><input type="text" ng-model='accEntry.department' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getDepartmentAccData,vm.updateDepartmentAccount)" /></td>
+                    <td><input type="text" ng-model='accEntry.project' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getProjectAccData,vm.updateProjectAccount)" /></td>
+                    <td><input type="text" ng-model='accEntry.employeeId' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getStaffAccData,vm.updateStaffAccount)" /></td>
+                    <td><input type="text" ng-model='accEntry.costAllocationId' required name="field" ng-click="vm.openCommonAccountModal($index,vm.getCostAllocationAccData,vm.updateStaffAccount)" /></td>
+                    <td><input type="text" ng-model='accEntry.CID' required name="field" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row" style="z-index:1;  position:relative">
+
+    <invoice-Image url="vm.imageUrl"></invoice-Image>
+
+    <div class="col-md-4">
+        <div class="detailBox">
+            <div class="titleBox">
+                <label>Voucher Comments</label>
+            </div>
+            <div class="actionBox" style="height:350px;overflow-y: auto" scroll-to-top-when="items_changed">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <input class="form-control" type="text" ng-model="vm.newComment" placeholder="Your comments" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" ng-click="vm.saveComment()">Add</button>
+                    </div>
+                </form>
+                <ul class="commentList" ng-repeat="comment in vm.voucher.Comments | orderBy:'-CreatedDateTime'">
+                    <li>
+                        <div class="commentText">
+                            <p class="">{{comment.Text}}</p> <span class="date sub-text">on {{comment.CreatedDateTime | date:'medium'}} by {{comment.CreatedBy}}</span>
+                        </div>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" ng-include="'app/modules/invoiceCode/creditDebitAccountPopup.html'">
+    </div>
+</div>
+<div id="commonAccountModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" ng-include="'app/modules/invoiceCode/commonAccountPopup.html'">
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" ng-include="'app/modules/invoiceCode/currencyConvertPopup.html'">
+    </div>
+</div>

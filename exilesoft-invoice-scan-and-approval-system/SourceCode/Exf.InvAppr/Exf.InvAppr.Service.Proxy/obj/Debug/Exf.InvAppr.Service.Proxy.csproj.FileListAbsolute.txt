@@ -1,0 +1,4 @@
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.Proxy\bin\Debug\Exf.InvAppr.Service.Proxy.dll
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.Proxy\bin\Debug\Exf.InvAppr.Service.Proxy.pdb
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.Proxy\obj\Debug\Exf.InvAppr.Service.Proxy.dll
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.Proxy\obj\Debug\Exf.InvAppr.Service.Proxy.pdb

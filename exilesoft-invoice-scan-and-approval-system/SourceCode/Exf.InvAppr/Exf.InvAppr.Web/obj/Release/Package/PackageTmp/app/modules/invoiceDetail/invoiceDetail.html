@@ -1,0 +1,92 @@
+﻿<form class="form-horizontal">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <div class="title">Invoice Details</div>
+            </div>
+        </div>
+        <div id="resizable-container" class="card-body">
+            <div id="top-content" class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                        <label class="control-label col-sm-2">Invoice Id:</label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-disabled="true" class="form-control" ng-model="vm.invoiceDetails.Voucher.Id" />
+                </div>
+                    </div>
+                <div class="form-group">
+                        <label class="control-label col-sm-2" for="invoiceNo">Invoice No:</label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-disabled="true" class="form-control" ng-model="vm.invoiceDetails.Voucher.InvoiceNo" name="invoiceNo" />
+                </div>
+                    </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Invoice Date:</label>
+                    <div class="col-sm-5">
+                        <label class="lbl-input-field">{{vm.invoiceDetails.Voucher.InvoiceDate | date:'yyyy-MM-dd' }}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Due Date:</label>
+                    <div class="col-sm-5">
+                        <label class="lbl-input-field">{{vm.invoiceDetails.Voucher.DueDate | date:'yyyy-MM-dd' }}</label>
+                    </div>
+                </div>
+                <div class="form-group ">
+                        <label class="control-label col-sm-2" for="supplier">Supplier:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" ng-disabled="true" ng-model="vm.invoiceDetails.Voucher.Supplier" name="supplier" />
+                        </div>
+                </div>
+                <div class="form-group ">
+                        <label class="control-label col-sm-2" for="amount">Invoice Amount:</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input lang="no" class="form-control" ng-disabled="true" ng-model="vm.invoiceDetails.Voucher.Amount" name="amount" style="width:49%; margin-right:2% !important;" />
+                            <input type="text" class="form-control" ng-disabled="true" ng-model="vm.invoiceDetails.Voucher.Currency" style="width:49%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="control-label col-sm-2">PO Number:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" ng-disabled="true" ng-model="vm.invoiceDetails.Voucher.PONumber" />
+                        </div>
+                </div>
+                <div class="form-group">
+                        <label class="control-label col-sm-2">Comment History:</label>
+                        <div class="col-sm-5">
+                            <div class="input-group">
+                    <div class="comment-box" ng-repeat="comment in vm.invoiceDetails.Voucher.Comments | orderBy:'-CreatedDateTime' | limitTo:vm.limitedComments.count">
+                        <p>{{comment.Text}}</p>
+                        - {{comment.CreatedBy}}
+                        at {{comment.CreatedDateTime |date}}
+                    </div>
+                    <div ng-show="vm.invoiceDetails.Voucher.Comments.length > 1" ng-click="vm.showHideComments()">{{vm.limitedComments.text}} <i ng-class="(vm.limitedComments.count > 1) ? 'fa fa-angle-up':'fa fa-angle-down'" aria-hidden="true"></i></div>
+                </div>
+                        </div>
+                        </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5">
+                    <input type="button" class="btn btn-info" value="Cancel" ng-click="vm.cancel()" />
+                </div>
+            </div>
+        </div>
+            </div>
+        <div id="bottom-content">
+            <invoice-Image url="vm.invoiceDetails.ImageUrl"></invoice-Image>
+        </div>
+        <div id="content-resizer" class="row"
+             resizer
+             resizer-height="6"
+             resizer-top="#top-content"
+             resizer-bottom="#bottom-content">
+        </div>
+    </div>
+    </div>
+</form>
+<style>
+    body {
+        overflow-y: hidden;
+    }
+</style>

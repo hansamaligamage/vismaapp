@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic,300);
+@charset "utf-8";
+/* CSS Document COMPOSE-RESPONSIVE SKIN */
+
+html { color: #444444; background-color: #FDFDFD; }
+
+body
+{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 13px;
+	font-weight: normal;	
+	background-color: #F6F6F6;
+}
+
+.endUserFormContent { background-color:#ffffff; }
+
+/* Headers and titles */
+h1,.h1 { color:#454545 }
+h2,.h2 { color:#444444 }
+h3,.h3 { color:#333333 }
+h4,.h4 { color:#222222 }
+h5,.h5 { color:#111111 }
+h6,.h6 { color:#000000 }
+
+p,.p { color:#333333 }
+
+
+
+.lightTitle {  }
+
+
+/****************/
+
+/*CENTERING*/
+.endUserWrapper { background-color: #FDFDFD; }
+
+.bigBoxContainer { background-color: #FDFDFD; }
+
+
+
+/*The header*/
+
+
+.endUserHeader-inside .endUserCenterElement { border-bottom:1px solid #E8E8E8; }
+
+.endUserHeaderLogo {
+    /*background-image: url('img/companyLogo.gif')!important;*/
+}
+
+/*The toolBar*/
+
+
+
+/*The  content body (under the toolbar) */
+
+.endUserBody .endUserCenterElement
+{
+	border-top:1px solid #E8E8E8;
+	border-bottom:1px solid #E8E8E8;
+}
+
+/*Pages menu*/
+.pageMenu
+{
+	/*background-image:url('img/iconsSprite.gif')!important;*/
+}
+
+/* progress menu */
+.endUserTopMenu ul li a .left,
+.endUserTopMenu ul li a .right,
+.endUserTopMenu ul li a .center {
+	/*background-image:url('img/progressMenu.gif')!important;*/
+}
+
+
+
+/*Form content*/
+.endUserCenterElement .endUserFormContent {  }
+
+
+/*The footer*/
+.endUserFooter{
+	visibility: hidden;
+}
+
+
+/* buttons */
+.endUSerNavButton .left,
+.endUSerNavButton .right,
+.endUSerNavButton .center {
+	/*background-image:url('img/buttonsSprite.gif')!important;*/
+}
+
+.iconLeft .center span.justText,
+.iconRight .center span.justText {
+	/*background-image:url('img/buttonsIconsSprite.gif')!important;*/
+}
+
+.contentRow {
+	margin-bottom: 15px !important;
+}
+
+.contentRow .labelItem  {
+    font-weight: normal !important;
+}
+
+.contentRow .formElementItem input[type="text"], .contentRow .formElementItem select, .contentRow .formElementItem textarea  {
+	display: block !important;
+    width: 100% !important;
+    height: 34px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    color: #555 !important;
+    background-color: #fff !important;
+    background-image: none !important;
+    border: 1px solid #ccc !important;
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.contentRow .formElementItem textarea {
+	min-height:100px !important;
+}
+.tag-big-text-area  textarea{
+	min-height: 250px !important;
+}
+
+.groupListContainer .disabledItem  textarea {
+	min-height:70px !important;
+	background-color: #ECECEA !important;
+}
+
+@media only screen and (max-width: 980px) and (min-width: 0px) {
+
+.responsiveLayout {
+	width: 100% !important;
+    margin-right: 0% !important;
+    margin-left: 0% !important;
+}
+
+}
+
+.tag-invoice-details{
+    background-color: #a55959;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.formElement.label_LEFT.widthFix > .formElementItem {
+	margin-bottom:0 !important;
+}
+
+.tag-btn-container {
+	float: left;
+    position: relative !important;
+}
+
+.contentRow  .endUSerNavButton  {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    cursor: pointer;
+    background-image: none;
+	background-color: #22A7F0 !important;
+    color: #FFF !important;
+}
+
+.tag-image-link a  {
+	display: inline-block !important;
+    padding: 6px 12px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    cursor: pointer;
+    background-image: none;
+	background-color: #22A7F0 !important;
+    color: #FFF !important;
+	text-decoration:none !important;
+}
+
+.tag-comment-container { margin-bottom:0px !importnat; }
+.tag-comment-container .contentRow { margin-bottom:10px }
+.tag-comment-container .theHintText { display: none; }
+

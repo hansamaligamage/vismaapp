@@ -1,0 +1,4 @@
+@WaBnd (BndNo, Descr, ValDt, AcYr, AcPr, TxYr, TxTrm, SrNo, R1, R2, R3, R4, R5, R6, SmDb, SmCr, CtrlSm, SrcTp, SrcJNo, Keep, Att, Susp, Dupl, BankAcNo, BankIB, BankOB, CpBankCh, BtPro, RevDt, RevAcYr, RevAcPr, RevTxYr, RevTxTrm, R7, R8, R9, R10, R11, R12, PrBt, Cur, CSmDb, CSmCr, AcNo, CustNo, Seller, Cur2, PrvJNo, PrvBndNo, CSmDb2, CSmCr2, SmDbExVat, SmCrExVat, EsTxTrm, RevEsTxTrm)
+"1" "" "20170402" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0.000000" "0.000000" "0.000000" "0" "0" "0" "0" "0" "0" "0" "0.000000" "0.000000" "0.000000" "0" "0" "0" "0" "0" "0" "" "" "" "" "" "" "0" "0" "0.000000" "0.000000" "0" "0" "0" "0" "0" "0" "0.000000" "0.000000" "0.000000" "0.000000" "0" "0" 
+
+

@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularAuthApp">
+<head>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>TISAS</title>
+    <!--<link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/app.css" rel="stylesheet" />-->
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="content/themes/base/jquery-ui.css">
+
+    <!--<link rel="stylesheet" type="text/css" href="content/css/select2.min.css">-->
+    <link rel="stylesheet" type="text/css" href="content//external/angular-ui-grid/ui-grid.css">
+
+
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="content/css/style.css">
+    <link rel="stylesheet" type="text/css" href="content/css/flat-blue.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body class="flat-blue">
+    <div class="app-container">
+        <div class="row content-container" data-ng-controller="indexController as idx">
+            <!-- Header -->
+            <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-expand-toggle">
+                            <i class="fa fa-bars icon"></i>
+                        </button>
+                        <!--<ol class="breadcrumb navbar-breadcrumb">
+                            <li class="active">Dashboard</li>
+                        </ol>-->
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-th icon"></i>
+                        </button>
+                    </div>
+                    <div role="navigation">
+                        <ul class="nav navbar-nav navbar-right" data-collapse="!navbarExpanded">
+                            <li class=""  ng-if="idx.authentication.isAuth==true">
+                                <div class="dropdown" style="margin-top:20px;">
+                                    <select ng-model="idx.selectedRegion" ng-change="idx.regionChanged()" ng-options="region.RegionCode for region in idx.authentication.userRegions track by region.Id" ng-init="idx.selectedRegion=idx.authentication.defaultRegion"></select>
+                                </div>
+                            </li>
+                            <li class="" data-ng-hide="!idx.authentication.isAuth">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{idx.authentication.displayName}} ({{idx.authentication.userRole}})</a>
+                            </li>
+                            <li class="" data-ng-hide="!idx.authentication.isAuth">
+                                <a href="" class="dropdown-toggle" data-ng-click="idx.logOut()" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-pencil-square-o"></i> Logout</a>
+                            </li>
+                            <li class="" data-ng-hide="idx.authentication.isAuth" ng-if="idx.displayLogin();">
+                                <a href="#/login" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-key"></i> Login</a>
+                            </li>
+                            <li class="" data-ng-hide="idx.authentication.isAuth" ng-if="idx.displaySignup();">
+                                <a href="#/signup" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-pencil-square-o"></i> Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header -->
+            <!-- Left Nav -->
+            <div class="side-menu sidebar-inverse">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="side-menu-container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <div class="icon fa fa-paper-plane"></div>
+                                <div class="title">TIQRI</div>
+                            </a>
+                            <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                                <i class="fa fa-times icon"></i>
+                            </button>
+                        </div>
+                        <ul class="nav navbar-nav" ng-if="idx.authentication.isAuth">
+                            <li ng-class="{active:idx.activeMenu === 'pv' }" ng-if="idx.IsAdmin() || idx.IsVerifier()">
+                                <a href="#/pendingInvoice" ng-click="idx.setActive('pv')">
+                                    <span class="icon fa fa-ellipsis-h"></span><span class="title">Pending Verification <span class="badge badge-inverse" style="margin:10px">{{idx.authentication.invoiceCountData.ToBeVerified + idx.authentication.invoiceCountData.VerifierMoreInfoRequested}}</span></span>
+                                </a>
+                            </li>
+                            <li ng-class="{active:idx.activeMenu === 'pa' }">
+                                <a href="#/pendingApproval" ng-if="idx.IsAdmin() || idx.IsApprover()" ng-click="idx.setActive('pa')">
+                                    <span class="icon fa fa-check-circle"></span><span class="title">Pending Approval <span class="badge badge-inverse" style="margin:10px">{{idx.authentication.invoiceCountData.Verified + idx.authentication.invoiceCountData.ApproverMoreInfoRequested}}</span></span>
+                                </a>
+                            </li>
+                            <li ng-class="{active:idx.activeMenu === 'appr' }">
+                                <a href="#/approved" ng-if="idx.IsAdmin() || idx.IsVerifier()" ng-click="idx.setActive('appr')">
+                                    <span class="icon fa fa-thumbs-o-up"></span><span class="title">Approved <span class="badge badge-inverse" style="margin:10px">{{idx.authentication.invoiceCountData.Approved}}</span></span>
+                                </a>
+                            </li>
+                            <li ng-class="{active:idx.activeMenu === 'rej' }">
+                                <a href="#/rejected" ng-if="idx.IsAdmin() || idx.IsVerifier() || idx.IsApprover()" ng-click="idx.setActive('rej')">
+                                    <span class="icon fa fa-thumbs-o-down"></span><span class="title">Rejected <span class="badge badge-inverse" style="margin:10px">{{idx.authentication.invoiceCountData.VerifierRejected + idx.authentication.invoiceCountData.ApproverRejected}}</span></span>
+                                </a>
+                            </li>
+                            <li ng-class="{active:idx.activeMenu === 'trf' }">
+                                <a href="#/transferred" ng-if="idx.IsAdmin() || idx.IsVerifier()" ng-click="idx.setActive('trf')">
+                                    <span class="icon fa fa-external-link"></span><span class="title">Transferred <span class="badge badge-inverse" style="margin: 10px">{{idx.authentication.invoiceCountData.Transferred}}</span></span>
+                                </a>
+                            </li>
+                            <li ng-class="{active:idx.activeMenu === 'imp' }">
+                                <a href="#/import" ng-if="idx.IsAdmin() || idx.IsVerifier()" ng-click="idx.setActive('imp')">
+                                    <span class="icon fa fa-upload"></span><span class="title">Import <span class="badge badge-inverse" style="margin:10px">{{idx.authentication.invoiceCountData.Import}}</span></span>
+                                </a>
+                            </li>
+                            <!-- EXPORT -->
+                            <!--<li ng-class="{active:idx.activeMenu === 'exp' }">
+                                <a href="#/export" ng-if="idx.IsAdmin() || idx.IsVerifier() || idx.IsApprover()" ng-click="idx.setActive('exp')">
+                                    <span class="icon fa fa-download"></span><span class="title">Export </span>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+            <!-- Left Nav -->
+            <!-- Main Content -->
+            <div class="container-fluid">
+
+                <div class="side-body padding-top">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div loading-indicator class="waiting-box"><span>Please wait...<img src="http://intown.biz/demo/wait/waiting.gif" /></span></div>
+
+                            <div data-ng-view="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <!--<span class="pull-right"><a href="#"><i class="fa fa-long-arrow-up"></i></a></span>-->
+                © 2017 Copyright TIQRI Corporation.
+            </div>
+        </footer>
+    </div>
+    <!-- 3rd party libraries -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
+    <script src="scripts/angular.js"></script>
+    <!--<script src="scripts/angular.min.js"></script>-->
+    <script type="text/javascript" src="content/external/moment/moment.js"></script>
+    <!--<script type="text/javascript" src="content/external/moment/angular-moment.min.js"></script>-->
+
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>-->
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <script src="content//external/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/ng-file-upload-shim.min.js"></script>
+    <script src="scripts/ng-file-upload-all.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <script src="app/invoice_routes.js"></script>
+    <script src="app/invoice_filters.js"></script>
+
+    <!-- Load services -->
+    <script src="app/services/appConfigService.js"></script>
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/invoiceService.js"></script>
+    <script src="app/services/gridService.js"></script>
+    <script src="app/services/vismaService.js"></script>
+    <script src="app/services/importExport.js"></script>
+
+    <!-- Load Directives-->
+    <script src="app/directives/jqDatePicker.js"></script>
+    <script src="app/directives/loadingIndicator.js"></script>
+    <script src="app/directives/resizer.js"></script>
+    <script src="app/directives/invoiceImage.js"></script>
+
+    <!-- Load controllers -->
+    <script src="app/modules/userManagement/userMgrController.js"></script>
+    <script src="app/modules/invoiceLists/pendingVerificationController.js"></script>
+    <script src="app/modules/invoiceLists/pendingApprovalController.js"></script>
+    <script src="app/modules/invoiceLists/approvedInvListController.js"></script>
+    <script src="app/modules/invoiceLists/rejectedController.js"></script>
+    <script src="app/modules/invoiceLists/transferredController.js"></script>
+    <script src="app/modules/userManagement/userApproveController.js"></script>
+    <script src="app/modules/verification/verifyController.js"></script>
+    <script src="app/modules/requestMoreInfo/requestMoreInfoController.js"></script>
+    <script src="app/modules/approval/approveController.js"></script>
+    <script src="app/modules/invoiceDetail/invoiceDetailController.js"></script>
+    <script src="app/directives/requestMoreInfo.js"></script>
+    <script src="app/modules/invoiceCode/invoiceCodeController.js"></script>
+    <script src="app/modules/invoiceCode/creditDebitPopupController.js"></script>
+    <script src="app/modules/invoiceCode/commonAccountPopupController.js"></script>
+    <script src="app/modules/invoiceCode/currencyConvertPopupController.js"></script>
+    <script src="app/modules/importExport/importController.js"></script>
+    <script src="app/modules/export/exportController.js"></script>
+
+    <!-- Theme Layout Javascript Libs -->
+    <script type="text/javascript" src="content/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="content/js/Chart.min.js"></script>
+    <script type="text/javascript" src="content/js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="content/js/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="content/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="content/js/dataTables.bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="content/js/select2.full.min.js"></script>-->
+    <!-- Javascript -->
+    <script type="text/javascript" src="content/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<script type="text/ng-template" id="creditDebitAccountPopup.html">
+    <div class="modal-header">
+        <h3>Select Account</h3>
+    </div>
+    <div class="modal-body">
+        <div>Search: <input type="text" placeholder="Search Account" ng-model="vm.searchText" /></div>
+        <div class="panel-heading no-padding-aside">
+            <ul class="nav nav-tabs" id="tabContent" ng-click="vm.tabChange($event)">
+                <li class="active"><a href="#all" data-toggle="tab">All Accounts</a></li>
+                <!--<li><a href="#customers" data-toggle="tab">Customers</a></li>-->
+                <li><a href="#suppliers" data-toggle="tab">Suppliers</a></li>
+                <li><a href="#generalLedgers" data-toggle="tab">General Ledgers</a></li>
+            </ul>
+        </div>
+        <div class="panel-body no-padding-aside">
+            <div class="tab-content">
+                <div class="tab-pane active no-padding" id="all">
+                    
+                    <br />
+                    <span ng-hide="(vm.vismaAllAccounts|filter:vm.searchText).length">No Data</span>
+
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr ng-repeat="account in vm.vismaAllAccounts|filter:vm.searchText" class="clickble-raw" ng-class="{'active':$index == vm.selectedRowIndex}" ng-click="vm.rowSelect($index,account,'account')" data-dismiss="modal">
+                                <td>{{account.No}}</td>
+                                <td>{{account.Name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--<div class="tab-pane active no-padding" id="customers">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr ng-repeat="customer in vm.vismaCustomers|filter:vm.searchText" class="clickble-raw" ng-class="{'active':$index == vm.selectedRowIndex}" ng-click="vm.rowSelect($index,customer,'customer')" data-dismiss="modal">
+                                <td>{{customer.No}}</td>
+                                <td>{{customer.Name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+
+                <div class="tab-pane no-padding" id="suppliers">
+
+                    <br />
+                    <span ng-hide="(vm.vismaSuppliers|filter:vm.searchText).length">No Data</span>
+
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr ng-repeat="supplier in vm.vismaSuppliers|filter:vm.searchText" class="clickble-raw" ng-class="{'active':$index == vm.selectedRowIndex}" ng-click="vm.rowSelect($index,supplier,'supplier')" data-dismiss="modal">
+                                <td>{{supplier.No}}</td>
+                                <td>{{supplier.Name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane no-padding" id="generalLedgers">
+
+                    <br />
+                    <span ng-hide="(vm.vismaGL|filter:vm.searchText).length">No Data</span>
+
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr ng-repeat="gl in vm.vismaGL|filter:vm.searchText" class="clickble-raw" ng-class="{'active':$index == vm.selectedRowIndex}" ng-click="vm.rowSelect($index,gl,'gl')" data-dismiss="modal">
+                                <td>{{gl.No}}</td>
+                                <td>{{gl.Name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
+</script>

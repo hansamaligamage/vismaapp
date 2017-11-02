@@ -1,0 +1,14 @@
+﻿<div>
+    <div ng-if="vm.message!=''" class="row" data-ng-class="(vm.isSaveSuccess) ? 'alert alert-success' : 'alert alert-danger'">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="vm.closeAlert($event)">&times;</a>
+        {{vm.message}}
+    </div>
+
+    <div class="row">
+        <input type="button" class="btn btn-primary" style="float:right" value="Transfer" ng-click="vm.TransferToVisma()"/>
+    </div>
+    <div class="row">
+        <div id="approvedInveGrid" ui-grid="vm.gridOptions" class="grid" ui-grid-selection ui-grid-pagination></div>
+    </div>
+
+</div>

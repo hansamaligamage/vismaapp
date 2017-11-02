@@ -1,0 +1,38 @@
+﻿<script type="text/ng-template" id="currencyConvertPopup.html">
+    <div class="modal-content">
+        <div class="modal-header">
+
+        </div>
+
+        <div class="modal-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <!--<th></th>-->
+                        <th>Date</th>
+                        <th>Currency no</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--<td>
+                            <button type="button" class="close" data-dismiss="modal" ng-click="vm.cancel()">
+                                &times;
+                            </button>
+                        </td>-->
+                        <td class="col-md-3"><input class="col-md-12" type="text" ng-model="vm.currencyData.date"/></td>
+                        <td class="col-md-3"><select class="selectpicker" ng-model="vm.currencyData.toCurrency" ng-options="currency.Name for currency in vm.currencyList" ></select></td>
+                        <td class="col-md-3"><input class="col-md-12" type="number"  ng-model="vm.currencyData.currencyRate"/></td>
+                        <td class="col-md-3"><input class="col-md-12" type="number" ng-model="vm.currencyData.baseAmount"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="vm.ok()">OK</button>
+            <button class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+        </div>
+    </div>
+</script>

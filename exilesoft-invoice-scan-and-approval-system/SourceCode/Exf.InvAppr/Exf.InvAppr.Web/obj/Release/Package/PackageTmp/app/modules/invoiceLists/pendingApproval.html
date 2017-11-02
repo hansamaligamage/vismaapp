@@ -1,0 +1,10 @@
+﻿<div ng-class="vm.alertStyle" ng-show="vm.showSuccessAlert">
+    <button type="button" class="close" data-ng-click="vm.switchBool('vm.showSuccessAlert')">×</button> <strong> {{vm.messageAlert}}</strong>
+</div>
+
+<button type="button" class="btn btn-success" ng-click="vm.approveSelected()">Approve Selected</button>
+
+<div id="pendingInveGrid" ui-grid="vm.gridOptions" class="grid" ui-grid-pagination ui-grid-selection></div>
+<div id="invoiceImage">
+    <img ng-src="{{vm.imageUrl}}" />
+</div>

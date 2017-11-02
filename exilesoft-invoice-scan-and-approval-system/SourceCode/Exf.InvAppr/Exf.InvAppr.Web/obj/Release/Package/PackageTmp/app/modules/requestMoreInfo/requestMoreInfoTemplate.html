@@ -1,0 +1,69 @@
+﻿<form novalidate name="frmRequestMore" class="form-horizontal">
+
+    <div class="form-group required" ng-if="vm.hflag != 1">
+
+        <label class="control-label col-sm-2" for="toemail">Verifyer:</label>
+        <div class="col-sm-4">
+            <label class="col-sm-9" >{{ vm.requestMoreInfo.verifierName}}</label>
+        </div>
+    </div>
+
+    <div class="form-group required" ng-if="vm.hflag != 1">
+
+        <label class="control-label col-sm-2" for="toemail">Request More Info From Verifyer:</label>
+        <div class="col-sm-4">
+            <label class="radio-inline">
+                <input id="YesResponse" ng-click="vm.requestInfoFromVerifier()" type="radio" ng-model="vm.requestingToVf" value="true"> Yes
+            </label>
+
+            <label class="radio-inline">
+                <input id="YesResponse"  ng-click="vm.requestInfoFromVerifier()"  type="radio" ng-model="vm.requestingToVf" value="false"> No
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group required">
+        <label class="control-label col-sm-2" for="toemail">To Email:</label>
+        <div class="col-sm-4">
+            <input type="email" name="toemail" class="form-control" ng-model="vm.requestMoreInfo.toAddress" placeholder="Enter To Email" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="ccEmail">CC Email:</label>
+        <div class="col-sm-4">
+            <input type="email" id="ccEmail" class="form-control" ng-model="vm.requestMoreInfo.ccAddress" placeholder="Enter CC Email (Optional)">
+        </div>
+    </div>
+
+
+    <div class="form-group required">
+        <label class="control-label col-sm-2" for="subject">Subject:</label>
+        <div class="col-sm-4">
+            <input type="text" name="subject" class="form-control" ng-model="vm.requestMoreInfo.subject" placeholder="Enter Email Subject" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label class="col-sm-2" style="font-weight:700"><input type="checkbox" ng-model="vm.requestMoreInfo.invoiceasattachment"> Send Invoice as an attachment</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group required">
+        <label class="control-label col-sm-2" for="emailbody">Email Content:</label>
+        <div class="col-sm-4">
+            <textarea class="form-control" ng-model="vm.requestMoreInfo.emailbody" name="emailbody" rows="8" placeholder="Enter Email Content" required></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" ng-click="vm.UpdateAndSendMail(frmRequestMore.toemail.$valid,frmRequestMore.subject.$valid,frmRequestMore.emailbody.$valid)">Send Mail</button>
+            <button class="btn btn-default" ng-click="vm.backNavigate()">Back</button>
+
+        </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-4" ng-bind-html="vm.message" data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+    </div>
+</form>

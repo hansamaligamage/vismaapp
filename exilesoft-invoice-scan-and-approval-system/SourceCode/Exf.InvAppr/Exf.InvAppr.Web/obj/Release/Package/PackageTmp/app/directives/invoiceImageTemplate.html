@@ -1,0 +1,13 @@
+﻿<div class="col-md-12 text-center">
+    <br />
+    <div style="z-index:99999; position:absolute; right:20px;">
+        <input type='button' class="btn btn-default" value='Zoom In'  ng-click="vm.zoomIn()"/>
+        <input type='button' class="btn btn-default" value='Reset' ng-click="vm.reset()" />
+        <input type='button' class="btn btn-default" value='Zoom Out' ng-click="vm.zoomOut()" />
+        <input type='button' class="btn btn-default" value='Rotate' ng-click="vm.rotateClockwise()" />
+    </div>
+    <br />
+    <div style="z-index:99; position:relative; ">
+        <img ng-src={{vm.url}} ng-style="vm.style">
+    </div>
+</div>

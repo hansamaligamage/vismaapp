@@ -1,0 +1,179 @@
+﻿Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Service Exf.InvAppr.EmailSaverService has been successfully installed.
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Committing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Uninstalling assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Removing EventLog source Exf.InvAppr.EmailSaverService.
+Service Exf.InvAppr.EmailSaverService is being removed from the system...
+Service Exf.InvAppr.EmailSaverService was successfully removed from the system.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Service Exf.InvAppr.EmailSaverService has been successfully installed.
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Committing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Uninstalling assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Removing EventLog source Exf.InvAppr.EmailSaverService.
+Service Exf.InvAppr.EmailSaverService is being removed from the system...
+Service Exf.InvAppr.EmailSaverService was successfully removed from the system.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Service Exf.InvAppr.EmailSaverService has been successfully installed.
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Committing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Uninstalling assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Removing EventLog source Exf.InvAppr.EmailSaverService.
+Service Exf.InvAppr.EmailSaverService is being removed from the system...
+Service Exf.InvAppr.EmailSaverService was successfully removed from the system.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Uninstalling assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Removing EventLog source Exf.InvAppr.EmailSaverService.
+Warning: The source Exf.InvAppr.EmailSaverService is not registered on the local machine.
+Service Exf.InvAppr.EmailSaverService is being removed from the system...
+Service Exf.InvAppr.EmailSaverService was successfully removed from the system.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Rolling back assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Restoring event log to previous state for source Exf.InvAppr.EmailSaverService.
+Installing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe
+Installing service Exf.InvAppr.EmailSaverService...
+Service Exf.InvAppr.EmailSaverService has been successfully installed.
+Creating EventLog source Exf.InvAppr.EmailSaverService in log Application...
+Committing assembly 'E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.InstallLog
+   assemblypath = E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr.EmailSaverService\Exf.InvAppr.EmailSaverService\bin\Debug\Exf.InvAppr.EmailSaverService.exe

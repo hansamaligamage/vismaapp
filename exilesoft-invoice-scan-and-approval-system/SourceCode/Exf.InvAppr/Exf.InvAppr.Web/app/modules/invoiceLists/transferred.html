@@ -1,0 +1,17 @@
+﻿<div>
+    <div ng-if="vm.rollbackMessage!=''" class="row" data-ng-class="(vm.isRollbackSuccess) ? 'alert alert-success' : 'alert alert-danger'">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="vm.closeAlert($event)">&times;</a>
+        {{vm.rollbackMessage}}
+    </div>
+    <div class="row">
+        <input type="button" class="btn btn-primary" style="float:right" value="Rollback" ng-click="vm.rollback()" />
+    </div>
+    <div class="row">
+        <div id="pendingInveGrid" ui-grid="vm.gridOptions" class="grid" ui-grid-pagination ui-grid-selection></div>
+    </div>
+    <div class="row">
+        <div id="invoiceImage">
+            <img ng-src="{{rejectedInvoices.imageUrl}}" />
+        </div>
+    </div>
+</div>

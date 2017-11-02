@@ -1,0 +1,1 @@
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.Visma\obj\Debug\Exf.InvAppr.Service.Visma.csprojResolveAssemblyReference.cache

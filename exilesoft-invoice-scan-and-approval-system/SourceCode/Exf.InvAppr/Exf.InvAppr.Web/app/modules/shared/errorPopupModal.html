@@ -1,0 +1,16 @@
+﻿<script type="text/ng-template">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span class="glyphicon glyphicon-indent-left"></span>Errors
+            <a title="Close"><i ng-click="data-dismiss='modal'" class="glyphicon glyphicon-remove icon-arrow-right pull-right"></i></a>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <ul ng-repeat="error in vm.errors">
+            <li>{{error}}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+    </div>
+
+</script>

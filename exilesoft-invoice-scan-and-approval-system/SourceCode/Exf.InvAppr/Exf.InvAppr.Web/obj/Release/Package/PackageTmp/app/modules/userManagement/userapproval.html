@@ -1,0 +1,88 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <div class="card">
+        <form class="form-login" role="form">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="title">Approve new user registration</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label> Username</label>
+                    <input type="text" class="form-control" placeholder="Email Address" data-ng-model="vm.registration.emailAddress" disabled>
+
+                </div>
+                <div class="form-group">
+                    <label>Dispaly Name</label>
+                    <input type="text" class="form-control" placeholder="Display Name" data-ng-model="vm.registration.displayName" disabled>
+                </div>
+                <!--<div class="form-group">-->
+                <!--<div class="form-group">
+                    <label class="control-label">Regions</label>
+                    <div>
+
+                        <label class="form-check-label" ng-repeat="region in vm.regions">
+                            <input class="form-check-input" type="checkbox" ng-model="region.checked" name="group" id="{{region.id}}" ng-disabled="!vm.rgEditing" />
+                            {{region.RegionCode}}
+                        </label>
+                        <button ng-if="!vm.rgEditing" ng-click="vm.rgEditing=true" type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                        <button ng-if="vm.rgEditing" ng-click="vm.rgEditingHandler()" type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-ok"></span> Ok
+                        </button>
+                        <button ng-if="vm.rgEditing" ng-click="vm.rgEditing=false" type="button" class="btn btn-default btn-sm"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                    </div>
+
+                </div>-->
+
+                <div class="form-group">
+                    <!--<p class="pull-left">Regions</p>-->
+                    <div>
+                        <label class="control-label">Regions</label>
+                        <button ng-if="!vm.rgEditing" ng-click="vm.rgEditing=true" type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                        <button ng-if="vm.rgEditing" ng-click="vm.rgEditingHandler()" type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-ok"></span> Ok
+                        </button>
+                        <button ng-if="vm.rgEditing" ng-click="vm.rgEditing=false" type="button" class="btn btn-default btn-sm"><i class="fa fa-undo" aria-hidden="true"></i></button>
+
+                        <div style="padding-left:10px" ng-repeat="region in vm.regions">
+                            <label>
+                                <input class="form-check-input" type="radio" ng-model="vm.defaultregionid" name="group" value="{{region.Id}}" ng-disabled="!vm.rgEditing" />
+                            </label>
+                            <label>
+                                <input class="form-check-input" type="checkbox" ng-model="region.checked" name="group" id="{{region.Id}}" ng-disabled="!vm.rgEditing" />
+                                {{region.RegionCode}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        Role
+                        <select class="form-control" data-ng-model="vm.registration.role" ng-options="role for role in vm.roles track by role" required autofocus ng-disabled="!vm.roleEditing"></select>
+                    </label>
+                    <button ng-if="!vm.roleEditing" ng-click="vm.roleEditing=true" type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                    </button>
+                    <button ng-if="vm.roleEditing" ng-click="vm.roleEditingHandler()" type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-ok"></span> Ok
+                    </button>
+                    <button ng-if="vm.roleEditing" ng-click="vm.roleEditing=false" type="button" class="btn btn-default btn-sm"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                </div>
+                <div class="form-group">
+                    <!--</div>-->
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="vm.updateUser()">Approve</button>
+                    </div>
+                    <div data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                        {{vm.message}}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

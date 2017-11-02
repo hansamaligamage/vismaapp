@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="eisasweb" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Finance\\exilesoft-invoice-scan-and-approval-system\\SourceCode\\Exf\.InvAppr\\Exf\.InvAppr\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

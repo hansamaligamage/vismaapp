@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{550B42A3-0EED-4549-9886-EC19B448851C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Exf.InvAppr.Sync.Visma</RootNamespace>
+    <AssemblyName>Exf.InvAppr.Sync.Visma</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="context\Ac.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AcBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AcGr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AcInt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AcPr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ActInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Actor.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ActorSocMe.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ActPrc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AcTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Address.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Agr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AgrAcc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AgrStruct.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Altinn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AltinnLog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AltProd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AOProdInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ARArch.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AssLink.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Aut.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\AutInvOp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BalGr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BankAc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BankCon.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Bgt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BgtLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BPart.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BPmt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\BPmtLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ChLog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ChQue.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CmpRsp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CombG.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CombMat.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CsDoc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CsDocF.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CsDocLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Ctry.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Cur.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CurCData.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CurCor.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CustBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CustDocL.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CustTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DecFVar.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DeclCd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DelAd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DelAlt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Delim.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DelimG.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DelTmBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Df.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DfLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Doc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DocLink.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DstKey.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\DstLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EDIErr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EdiFormId.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EDIMsg.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EDITrLog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EDocInfo.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EDocLog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EmlCfgFrm.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EmpPath.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EmTpl.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ErrLog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EsTxStmtL.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\EsTxTrm.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ExRt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ExRt2.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ExtConf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FactComp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FormCh.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FreeInf1.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FreeInf2.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FreeInf3.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\FrmData.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Hol.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Ind.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\InfNeed.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\InfTp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\IntFVar.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\IntLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\IntRt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\InvTx.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ItemLoc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\JobDstCmd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Lang.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Loc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\MaCustTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\MaSupTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\MsgFrom.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\MsgTo.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Mst.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\MtInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\NoSr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\NtfCd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OpCustTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OpSupTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Ord.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdAtt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdBa.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdDBa.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdDoc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdDocAtt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdDocF.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdDocLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdJ.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\OrdLnBa.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PicLst.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLCom.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFData.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFDatU.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFDoc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFDocU.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFGMem.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFGr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDFType.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PLDocGen.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PmtAgr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PmtMt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PmtTrm.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Post.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PrDcMat.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PrKey.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PrLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Prod.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdCat.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdCust.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdDesc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdProc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ProdTr2.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Prog.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Prop.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PropBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PropCl.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PropTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Proxy.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PrRep.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Prtcp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Purc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PurcSLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R1.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R10.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R10Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R11.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R11Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R12.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R12Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R1Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R2.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R2Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R3.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R3Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R4.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R4Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R5.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R5Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R6.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R6Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R7.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R7Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R8.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R8Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R9.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\R9Bal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Re.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RealJ.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RealJLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RemLtr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RepNt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ResRsv.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RptLbl.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RspTp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Rsv.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RVo.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\RVoLn.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ScanCd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SEMtInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Ser.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SESnapInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ShpBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Src.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\StatPr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Stc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\StcBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\StrFVar.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Struct.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SupBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SupTr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TaskJ.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TaxAcGr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TaxAcInf.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Templ.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TemplAcc.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TemplTp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TenancyF.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TSBal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TSCal.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TSGr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TspAgr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TspZ.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TxCd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TxCdAut.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TxStmtL.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Txt.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TxtCd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\TxTrm.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Unit.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Upd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\UpdBnd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\UpdMa.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\UpdVo.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\UsrComb.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\UsrDelim.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Vat.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\VismaContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VismaContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\VismaContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\VismaContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VismaContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\VoSr.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\VoTp.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\WaBnd.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\WaMa.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\WaVo.cs">
+      <DependentUpon>VismaContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IncomingInvoiceExporter.cs" />
+    <Compile Include="ExportService.cs" />
+    <Compile Include="ImportService.cs" />
+    <Compile Include="ViewModels\BatchExportViewModel.cs" />
+    <Compile Include="ViewModels\VoucherExportViewModel.cs" />
+    <Compile Include="VismaMasterDataConnector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exf.InvAppr.Common\Exf.InvAppr.Common.csproj">
+      <Project>{222ab802-aaa3-455e-af33-64f958f95868}</Project>
+      <Name>Exf.InvAppr.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exf.InvAppr.Data\Exf.InvAppr.Data.csproj">
+      <Project>{4C639DDD-F329-41B3-B983-F981A4E4C10E}</Project>
+      <Name>Exf.InvAppr.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exf.InvAppr.Service.Visma\Exf.InvAppr.Service.Visma.csproj">
+      <Project>{62625e43-af58-45b1-80d8-f30916f4471f}</Project>
+      <Name>Exf.InvAppr.Service.Visma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="context\VismaContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VismaContext.edmx</DependentUpon>
+      <LastGenOutput>VismaContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\VismaContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VismaContext.edmx</DependentUpon>
+      <LastGenOutput>VismaContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\VismaDB.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="context\VismaContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VismaContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="context\VismaContext.edmx.diagram">
+      <DependentUpon>VismaContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

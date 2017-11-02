@@ -1,0 +1,1 @@
+E:\Finance\exilesoft-invoice-scan-and-approval-system\SourceCode\Exf.InvAppr\Exf.InvAppr.Service.API\obj\Debug\Exf.InvAppr.Service.API.csprojResolveAssemblyReference.cache

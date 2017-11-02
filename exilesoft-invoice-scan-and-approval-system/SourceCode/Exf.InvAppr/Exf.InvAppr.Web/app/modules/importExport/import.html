@@ -1,0 +1,37 @@
+﻿<!-- MASTER DATA / TRANSACTIONAL DATA - IMPORT -->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Import Master/Transactional Data</h4>
+        </div>
+        <div class="panel-body">
+
+            <label class="btn btn-success" for="import-file-selector">
+                <input id="import-file-selector" type="file" ngf-select ng-model="vm.dataFile" style="display:none;">
+                Select File
+            </label>
+
+            <!--<input class="btn btn-primary" type="file" ngf-select ng-model="vm.dataFile" name="file" required>-->
+
+            <button type="button" class="btn btn-warning" ng-click="vm.resetImport()" ng-show="vm.dataFile">Remove</button>
+
+            <span>{{vm.dataFile.name}}</span>
+
+            <br /><br />
+
+            <h5 ng-show="vm.progressInfo.completed">Imported Successfuly</h5>
+
+            <h5 ng-show="vm.progressInfo.error">Import was not successful</h5>
+
+            <div class="progress" ng-show="vm.dataFile && !vm.progressInfo.completed && !vm.progressInfo.error">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{vm.progressInfo.percentage}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width : (vm.progressInfo.percentage + '%' ) }">
+                    <span class="sr-only">{{vm.progressInfo.percentage}}% Complete</span>
+                </div>
+            </div>
+
+            <button type="button" ng-disabled="!vm.dataFile" ng-click="vm.importMasterData()" class="btn btn-info">Import Master Data</button>
+            <button type="button" ng-disabled="!vm.dataFile" ng-click="vm.importTransactionalData()" class="btn btn-info">Import Transactional Data</button>
+
+        </div>
+    </div>
+</div>

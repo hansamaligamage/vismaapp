@@ -1,0 +1,64 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <div class="card">
+
+        <form class="form-login" role="form">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="title">Sign Up</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email Address" data-ng-model="vm.registration.emailAddress" required autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Display Name" data-ng-model="vm.registration.displayName" required autofocus>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" data-ng-model="vm.registration.role" ng-options="role for role in vm.roles track by role" required autofocus>
+                        <option value="" disabled>Select Role</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" data-ng-model="vm.registration.accountApprover" ng-options="admin.UserName for admin in vm.adminUsers track by admin.UserName" required autofocus>
+                        <option value="" disabled>Select Account Approver</option>
+                    </select>
+                </div>
+                <!--<div class="form-group">-->
+                <div class="form-group">
+                    <label class="control-label">Regions (Select Radio button for the default region)</label>    
+                    </div>
+                    <div class="form-group">
+                        <!--<p class="pull-left">Regions</p>-->
+                                      <div class="checkboxList">
+
+                            <div style="padding-left:10px" ng-repeat="region in vm.regions">
+                                <label>
+                                    <input class="form-check-input" type="radio" ng-model="vm.defaultregionid" ng-click="vm.defaultRegionByRadio()" name="group" value="{{region.Id}}" required />
+                                </label>
+                                <label>
+                                    <input class="form-check-input" type="checkbox" ng-click="vm.defaultRegionByCheckbox()" ng-model="region.checked" name="group" id="{{region.id}}" />
+                                    {{region.RegionCode}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="vm.registration.confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="vm.signUp()">Submit</button>
+                    </div>
+                    <div class="form-group" ng-bind-html="vm.message" data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                    </div>
+                    <!--<div data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+            {{vm.message}}
+        </div>-->
+                </div>
+        </form>
+    </div>
+</div>
